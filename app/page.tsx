@@ -11,7 +11,8 @@ type MutationCycle = {
 
 export default async function Home() {
   const mutationCycle = (await fetch(
-    "https://discord-bot.th.gl/api/mutation-cycle"
+    "https://discord-bot.th.gl/api/mutation-cycle",
+    { cache: "no-store" }
   ).then((res) => res.json())) as MutationCycle;
 
   return (
